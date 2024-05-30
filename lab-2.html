@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Лампочка</title>
+    <style>
+        #lamp {
+            width: 100px;
+            height: 200px;
+            margin: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #lamp img {
+            width: 100px;
+            height: auto;
+        }
+        #button-container {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Лампочка</h1>
+    <div id="lamp">
+        <img id="bulb" src="https://www.freestock.com/450/freestock_572996677.jpg" alt="Лампочка вимкнена">
+    </div>
+    <div id="button-container">
+        <button id="turnOnBtn">Включити</button>
+        <button id="turnOffBtn">Вимкнути</button>
+    </div>
+    <script>
+        document.getElementById('turnOnBtn').onclick = function() {
+            document.getElementById('bulb').src = 'https://cdn-icons-png.flaticon.com/512/4021/4021818.png'; // замініть на URL зображення увімкненої лампочки
+        }
+        document.getElementById('turnOffBtn').onclick = function() {
+            document.getElementById('bulb').src = 'https://www.freestock.com/450/freestock_572996677.jpg'; // замініть на URL зображення вимкненої лампочки
+        }
+    </script>
+</body>
+</html>
