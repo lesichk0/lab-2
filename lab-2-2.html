@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Світлофор</title>
+    <style>
+        .traffic-light {
+            width: 100px;
+            height: 300px;
+            background-color: black;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .light {
+            width: 60px;
+            height: 60px;
+            background-color: grey;
+            border-radius: 50%;
+        }
+        #red {
+            background-color: red;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Світлофор</h1>
+    <div class="traffic-light">
+        <div id="red" class="light"></div>
+        <div id="yellow" class="light"></div>
+        <div id="green" class="light"></div>
+    </div>
+    <button onclick="changeLight()">Змінити колір</button>
+    <script>
+        var currentLight = 0;
+        function changeLight() {
+            var lights = document.querySelectorAll('.light');
+            lights[currentLight].style.backgroundColor = 'grey';
+            currentLight = (currentLight + 1) % lights.length;
+            if (currentLight === 0) {
+                lights[currentLight].style.backgroundColor = 'red';
+            } else if (currentLight === 1) {
+                lights[currentLight].style.backgroundColor = 'yellow';
+            } else if (currentLight === 2) {
+                lights[currentLight].style.backgroundColor = 'green';
+            }
+        }
+        document.querySelectorAll('.light')[0].style.backgroundColor = 'red';
+    </script>
+</body>
+</html>
